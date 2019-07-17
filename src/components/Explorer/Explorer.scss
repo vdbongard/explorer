@@ -4,10 +4,11 @@
   width: 900px;
   height: 600px;
   color: $color-text;
+  box-shadow: $box-shadow-32;
   overflow: hidden;
   display: grid;
   grid-template-columns: 200px 1fr;
-  grid-template-rows: 40px 120px 1fr;
+  grid-template-rows: 32px 120px 1fr;
   grid-template-areas:
     'TopBar TopBar'
     'Header Header'

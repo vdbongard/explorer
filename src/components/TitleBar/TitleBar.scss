@@ -14,4 +14,53 @@
     display: flex;
     height: 100%;
   }
+
+  .actions {
+    font-family: 'Segoe MDL2 Assets', serif;
+    height: 100%;
+    display: flex;
+
+    button {
+      width: 48px;
+      font-size: 10px;
+      background: none;
+      border: none;
+      outline: none;
+
+      &:hover {
+        background-color: rgba(black, 0.08);
+      }
+
+      &:active {
+        background-color: rgba(black, 0.16);
+      }
+    }
+
+    button.close {
+      &:hover {
+        color: white;
+        background-color: $color-red;
+      }
+
+      &:active {
+        background-color: $color-red-hover;
+      }
+    }
+
+    .minimize::before {
+      content: '\E921';
+    }
+
+    .maximize::before {
+      content: '\E922';
+    }
+
+    .restore::before {
+      content: '\E923';
+    }
+
+    .close::before {
+      content: '\E8BB';
+    }
+  }
 }
