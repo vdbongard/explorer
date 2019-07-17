@@ -5,9 +5,7 @@ import Explorer from './components/Explorer/Explorer';
 const App: FC = (): ReactElement => {
   return (
     <div className="App">
-      <header className="App-header">
-        <Explorer />
-      </header>
+      <Explorer />
     </div>
   );
 };
