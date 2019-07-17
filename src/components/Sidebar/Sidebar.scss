@@ -1,0 +1,7 @@
+@import '../../styles/variables.scss';
+
+.Sidebar {
+  background: rgba(white, 0.8);
+  backdrop-filter: blur(10px) saturate(125%);
+  border-bottom-left-radius: $border-radius;
+}

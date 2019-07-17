@@ -1,6 +1,26 @@
+@import '../../styles/variables.scss';
+
 .Explorer {
-  background-color: #fff;
-  width: 600px;
-  height: 400px;
-  color: #282c34;
+  width: 900px;
+  height: 600px;
+  color: $color-text;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 160px 1fr;
+  grid-template-areas:
+    'Header Header'
+    'Sidebar Content';
+
+  .Header {
+    grid-area: Header;
+  }
+
+  .Sidebar {
+    grid-area: Sidebar;
+  }
+
+  .Content {
+    grid-area: Content;
+  }
 }
