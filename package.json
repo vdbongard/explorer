@@ -18,10 +18,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint */**/*.{js,ts,tsx}",
-    "lint-prettier": "npx prettier --config .prettierrc.js --list-different */**/*.{html,scss,css,json,yml,js,ts,tsx}",
-    "fix-lint": "eslint */**/*.{js,ts,tsx} --fix",
-    "fix-prettier": "prettier --config .prettierrc.js */**/*.{html,scss,css,json,yml,js,ts,tsx} --write",
+    "lint": "eslint **/*.{js,ts,tsx}",
+    "lint-prettier": "npx prettier --config .prettierrc.js --list-different **/*.{html,scss,css,json,yml,js,ts,tsx}",
+    "fix-lint": "eslint **/*.{js,ts,tsx} --fix",
+    "fix-prettier": "prettier --config .prettierrc.js **/*.{html,scss,css,json,yml,js,ts,tsx} --write",
     "fix": "npm run fix-prettier && npm run fix-lint"
   },
   "eslintConfig": {
