@@ -2,6 +2,7 @@
   "name": "explorer",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vdbongard.com/explorer",
   "dependencies": {
     "@types/jest": "24.0.15",
     "@types/node": "12.6.6",
