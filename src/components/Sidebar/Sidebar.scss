@@ -4,4 +4,18 @@
   background: rgba(white, 0.8);
   backdrop-filter: blur(10px) saturate(125%);
   border-bottom-left-radius: $border-radius;
+  user-select: none;
+  padding: 8px 0;
+  font-size: 13px;
+
+  .group {
+    margin-bottom: 8px;
+  }
+
+  .group-heading {
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    height: 24px;
+  }
 }

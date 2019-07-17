@@ -5,7 +5,7 @@ import Tab from '../Tab/Tab';
 const tabs = ['Tab 1', 'Tab 2'];
 
 const TopBar: FC = (): ReactElement => {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [maximized, setMaximized] = useState(false);
 
   const Tabs = tabs.map(
@@ -14,8 +14,8 @@ const TopBar: FC = (): ReactElement => {
         name={name}
         index={index}
         key={index}
-        selected={index === selectedTab}
-        onClick={(i): void => setSelectedTab(i)}
+        selected={index === selectedTabIndex}
+        onClick={(i): void => setSelectedTabIndex(i)}
       />
     )
   );
