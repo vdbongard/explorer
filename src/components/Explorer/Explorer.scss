@@ -7,10 +7,15 @@
   overflow: hidden;
   display: grid;
   grid-template-columns: 200px 1fr;
-  grid-template-rows: 160px 1fr;
+  grid-template-rows: 40px 120px 1fr;
   grid-template-areas:
+    'TopBar TopBar'
     'Header Header'
     'Sidebar Content';
+
+  .TopBar {
+    grid-area: TopBar;
+  }
 
   .Header {
     grid-area: Header;

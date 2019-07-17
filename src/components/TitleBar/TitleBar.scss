@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.TopBar {
+  background: rgba(white, 0.8);
+  backdrop-filter: blur(10px) saturate(125%);
+  border-top-left-radius: $border-radius;
+  border-top-right-radius: $border-radius;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .tabs {
+    display: flex;
+    height: 100%;
+  }
+}
