@@ -1,18 +1,23 @@
 @import '../../styles/variables.scss';
 
-.TopBar {
+.TitleBar {
   background: rgba(white, 0.8);
   backdrop-filter: blur(10px) saturate(125%);
   border-top-left-radius: $border-radius;
   border-top-right-radius: $border-radius;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  user-select: none;
 
   .tabs {
     display: flex;
     height: 100%;
+  }
+
+  .drag-area {
+    height: 100%;
+    flex: 1;
   }
 
   .actions {

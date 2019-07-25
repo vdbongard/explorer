@@ -1,12 +1,20 @@
-import React, { FC, ReactElement, ReactNode, useState } from 'react';
+import React, { FC, ReactElement, ReactNode, RefObject, useRef, useState } from 'react';
 import './TitleBar.scss';
 import Tab from '../Tab/Tab';
+import { useDrag } from '../../hooks/useDrag';
 
 const tabs = ['Tab 1', 'Tab 2'];
 
-const TopBar: FC = (): ReactElement => {
+interface Props {
+  setPos: (newPos: [number, number]) => void;
+  explorerRef: RefObject<HTMLDivElement>;
+}
+
+const TitleBar: FC<Props> = ({ setPos, explorerRef }): ReactElement => {
   const [selectedTabIndex, setSelectedTabIndex] = useState(0);
   const [maximized, setMaximized] = useState(false);
+  const dragRef = useRef<HTMLDivElement>(null);
+  useDrag(dragRef, explorerRef, setPos);
 
   const Tabs = tabs.map(
     (name, index): ReactNode => (
@@ -23,8 +31,9 @@ const TopBar: FC = (): ReactElement => {
   const toggleMaximize = (): void => setMaximized(!maximized);
 
   return (
-    <div className="TopBar">
+    <div className="TitleBar">
       <div className="tabs">{Tabs}</div>
+      <div className="drag-area" ref={dragRef} />
       <div className="actions">
         <button className="minimize" />
         <button className={maximized ? 'restore' : 'maximize'} onClick={toggleMaximize} />
@@ -34,4 +43,4 @@ const TopBar: FC = (): ReactElement => {
   );
 };
 
-export default TopBar;
+export default TitleBar;

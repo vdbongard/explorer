@@ -1,6 +1,7 @@
 @import '../../styles/variables.scss';
 
 .Explorer {
+  position: absolute;
   width: 900px;
   height: 600px;
   color: $color-text;
@@ -10,12 +11,12 @@
   grid-template-columns: 200px 1fr;
   grid-template-rows: 30px 120px 1fr;
   grid-template-areas:
-    'TopBar TopBar'
+    'TitleBar TitleBar'
     'Header Header'
     'Sidebar Content';
 
-  .TopBar {
-    grid-area: TopBar;
+  .TitleBar {
+    grid-area: TitleBar;
   }
 
   .Header {
