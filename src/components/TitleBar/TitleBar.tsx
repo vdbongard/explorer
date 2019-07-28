@@ -1,9 +1,16 @@
-import React, { FC, ReactElement, ReactNode, RefObject, useRef, useState } from 'react';
+import React, {
+  FC,
+  ReactElement,
+  ReactNode,
+  RefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import './TitleBar.scss';
 import Tab from '../Tab/Tab';
 import { useDrag } from '../../hooks/useDrag';
-
-const tabs = ['Tab 1', 'Tab 2'];
 
 interface Props {
   setPos: (newPos: [number, number]) => void;
@@ -11,28 +18,74 @@ interface Props {
 }
 
 const TitleBar: FC<Props> = ({ setPos, explorerRef }): ReactElement => {
-  const [selectedTabIndex, setSelectedTabIndex] = useState(0);
+  const [tabs, setTabs] = useState(['Tab 1']);
+  const [selectedTab, setSelectedTab] = useState('Tab 1');
   const [maximized, setMaximized] = useState(false);
+  const [addedTab, setAddedTab] = useState(false);
   const dragRef = useRef<HTMLDivElement>(null);
+  const tabsWrapperRef = useRef<HTMLDivElement>(null);
   useDrag(dragRef, explorerRef, setPos);
+
+  const closeTab = useCallback(
+    (name: string): void => {
+      if (selectedTab === name) {
+        const index = tabs.findIndex((tab): boolean => tab === selectedTab);
+        if (tabs[index + 1]) {
+          setSelectedTab(tabs[index + 1]);
+        } else if (tabs[index - 1]) {
+          setSelectedTab(tabs[index - 1]);
+        } else {
+          setSelectedTab('');
+        }
+      }
+      setTabs([...tabs.filter((tab): boolean => tab !== name)]);
+    },
+    [selectedTab, tabs]
+  );
 
   const Tabs = tabs.map(
     (name, index): ReactNode => (
       <Tab
         name={name}
-        index={index}
         key={index}
-        selected={index === selectedTabIndex}
-        onClick={(i): void => setSelectedTabIndex(i)}
+        selected={name === selectedTab}
+        onClick={(): void => setSelectedTab(name)}
+        closeTab={closeTab}
       />
     )
   );
 
   const toggleMaximize = (): void => setMaximized(!maximized);
 
+  const addTab = (): void => {
+    const newTabIndex = tabs.length;
+    const newTabName = `Tab ${newTabIndex + 1}`;
+    setTabs([...tabs, newTabName]);
+    setSelectedTab(newTabName);
+    setAddedTab(true);
+    if (tabsWrapperRef.current) {
+      tabsWrapperRef.current.scrollLeft = tabsWrapperRef.current.scrollWidth;
+    }
+  };
+
+  // scroll to the end of the tab list if a tab is added
+  useEffect((): void => {
+    if (addedTab && tabsWrapperRef.current) {
+      tabsWrapperRef.current.scrollLeft = tabsWrapperRef.current.scrollWidth;
+      setAddedTab(false);
+    }
+  }, [addedTab]);
+
   return (
     <div className="TitleBar">
-      <div className="tabs">{Tabs}</div>
+      <div className="tabs">
+        <div className="tabs-wrapper" ref={tabsWrapperRef}>
+          {Tabs}
+        </div>
+        <button className="add-tab" onClick={addTab}>
+          
+        </button>
+      </div>
       <div className="drag-area" ref={dragRef} />
       <div className="actions">
         <button className="minimize" />

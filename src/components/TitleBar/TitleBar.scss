@@ -13,32 +13,36 @@
   .tabs {
     display: flex;
     height: 100%;
+    overflow: hidden;
+
+    .tabs-wrapper {
+      display: flex;
+      overflow: scroll hidden;
+    }
+
+    .add-tab {
+      @extend .clickable-light;
+      font-family: 'Segoe MDL2 Assets', serif;
+      width: 30px;
+      flex-shrink: 0;
+    }
   }
 
   .drag-area {
     height: 100%;
-    flex: 1;
+    flex: 1 0 80px;
   }
 
   .actions {
     font-family: 'Segoe MDL2 Assets', serif;
     height: 100%;
     display: flex;
+    flex-shrink: 0;
 
     button {
+      @extend .clickable-dark;
       width: 46px;
       font-size: 10px;
-      background: none;
-      border: none;
-      outline: none;
-
-      &:hover {
-        background-color: rgba(black, 0.08);
-      }
-
-      &:active {
-        background-color: rgba(black, 0.16);
-      }
     }
 
     button.close {

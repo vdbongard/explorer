@@ -6,9 +6,30 @@ $color-blue-border: #A0D4FF;
 
 $color-text: rgba(black, 0.9);
 $border-radius: 4px;
+$bar-height: 30px;
 
 /* Shadow – 08px (Default) */
 $box-shadow-8: 0 0.6px 1.8px rgba(0, 0, 0, 0.11), 0 3.2px 7.2px rgba(0, 0, 0, 0.13);
 
 /* Shadow – 32px */
 $box-shadow-32: 0 2.4px 7.2px rgba(0, 0, 0, 0.18), 0 12.8px 28.8px rgba(0, 0, 0, 0.22);
+
+.clickable-light {
+  &:hover {
+    background: rgba(white, 0.5);
+  }
+
+  &:active {
+    background-color: rgba(white, 0.8);
+  }
+}
+
+.clickable-dark {
+  &:hover {
+    background-color: rgba(black, 0.08);
+  }
+
+  &:active {
+    background-color: rgba(black, 0.16);
+  }
+}

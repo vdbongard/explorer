@@ -1,7 +1,5 @@
 @import '../../styles/variables.scss';
 
-$bar-height: 30px;
-
 .HeaderBar {
   display: flex;
   align-items: center;
@@ -46,6 +44,7 @@ $bar-height: 30px;
 
   .breadcrumbs {
     display: flex;
+    align-items: center;
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: $border-radius;
