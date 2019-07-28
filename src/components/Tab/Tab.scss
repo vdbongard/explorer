@@ -10,6 +10,23 @@
   font-size: 14px;
   user-select: none;
 
+  &:not(:first-child) {
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &:last-child {
+    border-right: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  &.selected,
+  &.selected + & {
+    border-left-color: transparent;
+  }
+
+  &:last-child.selected {
+    border-right-color: transparent;
+  }
+
   .tab-name {
     white-space: nowrap;
     text-overflow: ellipsis;
