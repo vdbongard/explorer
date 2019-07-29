@@ -1,52 +1,7 @@
 import React, { FC, ReactElement, ReactNode, useState } from 'react';
 import './Sidebar.scss';
 import SidebarElement from '../SidebarElement/SidebarElement';
-
-const quickAccessFolder = [
-  {
-    name: 'Desktop',
-    icon: '',
-  },
-  {
-    name: 'Downloads',
-    icon: '',
-  },
-  {
-    name: 'Documents',
-    icon: '',
-  },
-  {
-    name: 'Images',
-    icon: '',
-  },
-  {
-    name: 'Music',
-    icon: '',
-  },
-];
-
-const thisPCFolder = [
-  {
-    name: 'Desktop',
-    icon: '',
-  },
-  {
-    name: 'Downloads',
-    icon: '',
-  },
-  {
-    name: 'Documents',
-    icon: '',
-  },
-  {
-    name: 'Images',
-    icon: '',
-  },
-  {
-    name: 'Music',
-    icon: '',
-  },
-];
+import { quickAccessFolder, thisPCFolder } from '../../dummy-data';
 
 const Sidebar: FC = (): ReactElement => {
   const [selectedElementIndex, setSelectedElementIndex] = useState();
