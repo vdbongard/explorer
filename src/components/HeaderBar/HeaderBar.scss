@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 12px 0 4px;
+  padding: 0 4px;
 
   .actions {
     margin-right: 4px;
@@ -99,5 +99,9 @@
     &:focus {
       outline: none;
     }
+  }
+
+  .menu {
+    margin-left: 4px;
   }
 }

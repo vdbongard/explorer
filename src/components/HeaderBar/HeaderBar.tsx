@@ -96,6 +96,8 @@ const HeaderBar: FC = (): ReactElement => {
           </div>
         )}
       </div>
+
+      <button className="menu"></button>
     </div>
   );
 };
