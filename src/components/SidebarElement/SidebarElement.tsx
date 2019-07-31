@@ -4,7 +4,7 @@ import { FileSystemContext } from '../../App';
 
 interface Props {
   name: string;
-  icon: string;
+  icon?: string;
   selected: boolean;
   index: number;
   onClick: (index: number) => void;
@@ -17,13 +17,13 @@ const SidebarElement: FC<Props> = ({ icon, name, selected, index, onClick }): Re
   if (selected) className += ' selected';
 
   const handleClick = (): void => {
-    dispatch({ type: 'changePath', path: `This PC\\${name}` });
+    dispatch({ type: 'changePath', path: index === 0 ? 'This PC' : `This PC\\${name}` });
     onClick(index);
   };
 
   return (
     <div className={className} onClick={handleClick}>
-      <div className="icon">{icon}</div>
+      {icon && <div className="icon">{icon}</div>}
       <div className="name">{name}</div>
     </div>
   );

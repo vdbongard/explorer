@@ -41,14 +41,8 @@ const Sidebar: FC = (): ReactElement => {
 
   return (
     <div className="Sidebar">
-      <div className="group">
-        <div className="group-heading">Quick access</div>
-        {quickAccessList}
-      </div>
-      <div className="group">
-        <div className="group-heading">This PC</div>
-        {thisPCList}
-      </div>
+      <div className="group">{quickAccessList}</div>
+      <div className="group">{thisPCList}</div>
     </div>
   );
 };

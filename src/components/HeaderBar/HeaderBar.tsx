@@ -28,6 +28,9 @@ const HeaderBar: FC = (): ReactElement => {
     const newPath = lastIndex >= 0 ? path.slice(0, lastIndex) : path;
     dispatch({ type: 'changePath', path: newPath });
   };
+  const onClickFolder = (path: string): void => {
+    dispatch({ type: 'changePath', path });
+  };
   const onBlur = (e: FocusEvent<HTMLInputElement>): void => {
     if (e.target.value) {
       dispatch({ type: 'changePath', path: e.target.value });
@@ -51,7 +54,12 @@ const HeaderBar: FC = (): ReactElement => {
       (folder, index, array): ReactNode => {
         return (
           <React.Fragment key={index}>
-            <div className="folder">{folder}</div>
+            <div
+              className="folder"
+              onClick={(): void => onClickFolder(array.slice(0, index + 1).join('\\'))}
+            >
+              {folder}
+            </div>
             {index !== array.length - 1 && <div className="arrow"></div>}
           </React.Fragment>
         );
