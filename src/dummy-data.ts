@@ -1,8 +1,8 @@
 import { Node } from './App';
 
-export const quickAccessFolder = [
+export const favoritesFolder = [
   {
-    name: 'Quick Access',
+    name: 'Favorites',
   },
   {
     name: 'Desktop',

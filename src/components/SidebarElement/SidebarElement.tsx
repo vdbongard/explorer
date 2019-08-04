@@ -8,9 +8,17 @@ interface Props {
   selected: boolean;
   index: number;
   onClick: (index: number) => void;
+  header?: boolean;
 }
 
-const SidebarElement: FC<Props> = ({ icon, name, selected, index, onClick }): ReactElement => {
+const SidebarElement: FC<Props> = ({
+  icon,
+  name,
+  selected,
+  index,
+  onClick,
+  header = false,
+}): ReactElement => {
   const [, dispatch] = useContext(FileSystemContext);
   let className = 'SidebarElement';
 
@@ -21,10 +29,13 @@ const SidebarElement: FC<Props> = ({ icon, name, selected, index, onClick }): Re
     onClick(index);
   };
 
+  let nameClass = 'name';
+  if (header) nameClass += ' header';
+
   return (
     <div className={className} onClick={handleClick}>
       {icon && <div className="icon">{icon}</div>}
-      <div className="name">{name}</div>
+      <div className={nameClass}>{name}</div>
     </div>
   );
 };

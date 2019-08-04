@@ -1,13 +1,13 @@
 import React, { FC, ReactElement, ReactNode, useState } from 'react';
 import './Sidebar.scss';
 import SidebarElement from '../SidebarElement/SidebarElement';
-import { quickAccessFolder, thisPCFolder } from '../../dummy-data';
+import { favoritesFolder, thisPCFolder } from '../../dummy-data';
 
 const Sidebar: FC = (): ReactElement => {
   const [selectedElementIndex, setSelectedElementIndex] = useState();
   const [selectedPCElementIndex, setSelectedPCElementIndex] = useState();
 
-  const quickAccessList = quickAccessFolder.map(
+  const quickAccessList = favoritesFolder.map(
     ({ name, icon }, index): ReactNode => (
       <SidebarElement
         name={name}
@@ -19,6 +19,7 @@ const Sidebar: FC = (): ReactElement => {
           setSelectedElementIndex(i);
           setSelectedPCElementIndex(null);
         }}
+        header={index === 0}
       />
     )
   );
@@ -35,6 +36,7 @@ const Sidebar: FC = (): ReactElement => {
           setSelectedPCElementIndex(i);
           setSelectedElementIndex(null);
         }}
+        header={index === 0}
       />
     )
   );

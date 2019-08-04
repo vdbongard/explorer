@@ -3,7 +3,7 @@
 .SidebarElement {
   display: flex;
   align-items: center;
-  padding: 5px 16px;
+  padding: 6px 16px;
   cursor: pointer;
   border: 1px solid transparent;
 
@@ -16,8 +16,17 @@
     background-color: rgba(0, 0, 0, 0.075);
   }
 
+  &.selected .name {
+    font-weight: 600;
+  }
+
+  .name.header {
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
   .icon {
     font-family: 'Segoe MDL2 Assets', serif;
-    margin-right: 8px;
+    margin-right: 12px;
   }
 }
