@@ -39,6 +39,10 @@ export const thisPCFolder = [
     icon: '',
   },
   {
+    name: '8TB HDD',
+    icon: '',
+  },
+  {
     name: 'OneDrive',
     icon: '',
   },
