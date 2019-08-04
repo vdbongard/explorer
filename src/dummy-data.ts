@@ -6,49 +6,41 @@ export const favoritesFolder = [
   },
   {
     name: 'Desktop',
-    icon: '',
+    icon: '',
   },
   {
     name: 'Downloads',
-    icon: '',
+    icon: '',
   },
   {
     name: 'Documents',
-    icon: '',
+    icon: '',
   },
   {
-    name: 'Images',
-    icon: '',
+    name: 'Pictures',
+    icon: '',
   },
   {
     name: 'Music',
-    icon: '',
+    icon: '',
+  },
+  {
+    name: 'Videos',
+    icon: '',
   },
 ];
 
 export const thisPCFolder = [
   {
+    name: 'Locations',
+  },
+  {
     name: 'This PC',
+    icon: '',
   },
   {
-    name: 'Desktop',
-    icon: '',
-  },
-  {
-    name: 'Downloads',
-    icon: '',
-  },
-  {
-    name: 'Documents',
-    icon: '',
-  },
-  {
-    name: 'Images',
-    icon: '',
-  },
-  {
-    name: 'Music',
-    icon: '',
+    name: 'OneDrive',
+    icon: '',
   },
 ];
 
@@ -76,8 +68,9 @@ export const fileSystem: Node[] = [
         ],
       },
       { type: 'folder', name: 'Documents' },
-      { type: 'folder', name: 'Images' },
+      { type: 'folder', name: 'Pictures' },
       { type: 'folder', name: 'Music' },
+      { type: 'folder', name: 'Videos' },
     ],
   },
 ];
