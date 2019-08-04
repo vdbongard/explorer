@@ -76,10 +76,13 @@ const TitleBar: FC<Props> = ({ setPos, explorerRef }): ReactElement => {
     }
   }, [addedTab]);
 
+  let tabWrapperClass = 'tabs-wrapper';
+  if (selectedTab === tabs[tabs.length - 1]) tabWrapperClass += ' with-shadow';
+
   return (
     <div className="TitleBar">
       <div className="tabs">
-        <div className="tabs-wrapper" ref={tabsWrapperRef}>
+        <div className={tabWrapperClass} ref={tabsWrapperRef}>
           {Tabs}
         </div>
         <button className="add-tab" onClick={addTab}>

@@ -39,6 +39,7 @@
 
   &.selected {
     background: white;
+    box-shadow: $box-shadow-8;
 
     .close-area .btn-close {
       opacity: 1;
