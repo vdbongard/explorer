@@ -18,11 +18,11 @@ export const favoritesFolder = [
   },
   {
     name: 'Pictures',
-    icon: '',
+    icon: '',
   },
   {
     name: 'Music',
-    icon: '',
+    icon: '',
   },
   {
     name: 'Videos',
