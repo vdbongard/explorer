@@ -18,7 +18,16 @@
 
     .tabs-wrapper {
       display: flex;
-      overflow: scroll hidden;
+      overflow: auto hidden;
+
+      // hide scrollbar in firefox
+      scrollbar-width: none;
+
+      // hide scrollbar in chrome
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+      }
 
       &.with-shadow {
         box-shadow: $box-shadow-8;
