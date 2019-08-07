@@ -33,7 +33,11 @@
     padding: 0 12px;
   }
 
-  &:hover .close-area .btn-close {
+  &:hover .close-area .btn-close:not(:focus-visible) {
+    opacity: 1;
+  }
+
+  &:hover .close-area .btn-close:not(:-moz-focusring) {
     opacity: 1;
   }
 
@@ -41,7 +45,11 @@
     background: white;
     box-shadow: $box-shadow-8;
 
-    .close-area .btn-close:not(:focus-visible):not(:-moz-focusring) {
+    .close-area .btn-close:not(:focus-visible) {
+      opacity: 1;
+    }
+
+    .close-area .btn-close:not(:-moz-focusring) {
       opacity: 1;
     }
   }
@@ -58,7 +66,11 @@
       font-size: 10px;
       padding: 0;
 
-      &:not(:focus-visible):not(:-moz-focusring) {
+      &:not(:focus-visible) {
+        opacity: 0;
+      }
+
+      &:not(:-moz-focusring) {
         opacity: 0;
       }
 
