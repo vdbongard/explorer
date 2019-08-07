@@ -13,11 +13,11 @@
     background-color: rgba(0, 0, 0, 0.03);
   }
 
-  &:focus-visible {
+  &:-moz-focusring {
     background-color: rgba(0, 0, 0, 0.03);
   }
 
-  &:-moz-focusring {
+  &:focus-visible {
     background-color: rgba(0, 0, 0, 0.03);
   }
 
@@ -28,11 +28,11 @@
   &.selected {
     background-color: rgba(0, 0, 0, 0.075);
 
-    &:focus-visible {
+    &:-moz-focusring {
       background-color: rgba(0, 0, 0, 0.1);
     }
 
-    &:-moz-focusring {
+    &:focus-visible {
       background-color: rgba(0, 0, 0, 0.1);
     }
   }

@@ -66,12 +66,12 @@
         background-color: $color-red;
       }
 
-      &:focus-visible {
+      &:-moz-focusring {
         color: white;
         background-color: $color-red;
       }
 
-      &:-moz-focusring {
+      &:focus-visible {
         color: white;
         background-color: $color-red;
       }

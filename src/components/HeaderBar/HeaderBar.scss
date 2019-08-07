@@ -25,11 +25,11 @@
       background-color: rgba(0, 0, 0, 0.05);
     }
 
-    &:focus-visible {
+    &:-moz-focusring {
       background-color: rgba(0, 0, 0, 0.05);
     }
 
-    &:-moz-focusring {
+    &:focus-visible {
       background-color: rgba(0, 0, 0, 0.05);
     }
 
