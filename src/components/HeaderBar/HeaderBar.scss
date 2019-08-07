@@ -101,6 +101,17 @@
     }
   }
 
+  input.search {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    flex: 0 0 200px;
+    margin-left: 4px;
+    cursor: text;
+
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+  }
+
   .menu {
     margin-left: 4px;
   }

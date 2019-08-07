@@ -97,6 +97,8 @@ const HeaderBar: FC = (): ReactElement => {
         )}
       </div>
 
+      <input type="text" placeholder="Search" className="search" />
+
       <button className="menu"></button>
     </div>
   );
