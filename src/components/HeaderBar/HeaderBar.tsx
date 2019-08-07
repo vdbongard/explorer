@@ -56,6 +56,7 @@ const HeaderBar: FC = (): ReactElement => {
           <React.Fragment key={index}>
             <div
               className="folder"
+              tabIndex={-1}
               onClick={(): void => onClickFolder(array.slice(0, index + 1).join('\\'))}
             >
               {folder}
