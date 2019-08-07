@@ -41,7 +41,7 @@
     background: white;
     box-shadow: $box-shadow-8;
 
-    .close-area .btn-close {
+    .close-area .btn-close:not(:focus-visible):not(:-moz-focusring) {
       opacity: 1;
     }
   }
@@ -57,11 +57,23 @@
       font-family: 'Segoe MDL2 Assets', serif;
       font-size: 10px;
       padding: 0;
-      opacity: 0;
+
+      &:not(:focus-visible):not(:-moz-focusring) {
+        opacity: 0;
+      }
 
       &:hover {
         color: #fe1c1c;
       }
+
+      &:focus-visible {
+        color: #fe1c1c;
+      }
+
+      &:-moz-focusring {
+        color: #fe1c1c;
+      }
+
       &:active {
         color: #b21d1d;
       }

@@ -17,9 +17,14 @@ const Content: FC = (): ReactElement => {
       {nodes &&
         nodes.map(
           (node, index): ReactNode => (
-            <div className={`node ${node.type}`} onClick={() => onClick(node)} key={index}>
+            <button
+              className={`node ${node.type}`}
+              onClick={(): void => onClick(node)}
+              key={index}
+              tabIndex={0}
+            >
               {node.name}
-            </div>
+            </button>
           )
         )}
     </div>

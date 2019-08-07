@@ -7,7 +7,7 @@ import React, {
   useContext,
   ReactNode,
   KeyboardEvent,
-  MouseEvent,
+  SyntheticEvent,
 } from 'react';
 import './HeaderBar.scss';
 import { FileSystemContext } from '../../App';
@@ -18,7 +18,7 @@ const HeaderBar: FC = (): ReactElement => {
   const inputRef = useRef<HTMLInputElement>(null);
   const breadcrumbsRef = useRef<HTMLDivElement>(null);
 
-  const onClick = (e: MouseEvent): void => {
+  const showInput = (e: SyntheticEvent): void => {
     if (e.target === breadcrumbsRef.current) {
       setFocus(true);
     }
@@ -78,7 +78,7 @@ const HeaderBar: FC = (): ReactElement => {
         </button>
       </div>
 
-      <div className="bar" onClick={onClick}>
+      <div className="bar">
         {focus ? (
           <input
             type="text"
@@ -91,7 +91,13 @@ const HeaderBar: FC = (): ReactElement => {
             autoFocus={true}
           />
         ) : (
-          <div className="breadcrumbs" ref={breadcrumbsRef}>
+          <div
+            className="breadcrumbs"
+            ref={breadcrumbsRef}
+            onClick={showInput}
+            onFocus={showInput}
+            tabIndex={0}
+          >
             {breadcrumbs}
           </div>
         )}

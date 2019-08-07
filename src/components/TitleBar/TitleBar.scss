@@ -66,6 +66,16 @@
         background-color: $color-red;
       }
 
+      &:focus-visible {
+        color: white;
+        background-color: $color-red;
+      }
+
+      &:-moz-focusring {
+        color: white;
+        background-color: $color-red;
+      }
+
       &:active {
         background-color: $color-red-hover;
       }

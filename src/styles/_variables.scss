@@ -19,6 +19,14 @@ $box-shadow-32: 0 2.4px 7.2px rgba(0, 0, 0, 0.18), 0 12.8px 28.8px rgba(0, 0, 0,
     background: rgba(white, 0.5);
   }
 
+  &:focus-visible {
+    background: rgba(white, 0.5);
+  }
+
+  &:-moz-focusring {
+    background: rgba(white, 0.5);
+  }
+
   &:active {
     background-color: rgba(white, 0.8);
   }
@@ -26,6 +34,14 @@ $box-shadow-32: 0 2.4px 7.2px rgba(0, 0, 0, 0.18), 0 12.8px 28.8px rgba(0, 0, 0,
 
 .clickable-dark {
   &:hover {
+    background-color: rgba(black, 0.08);
+  }
+
+  &:focus-visible {
+    background-color: rgba(black, 0.08);
+  }
+
+  &:-moz-focusring {
     background-color: rgba(black, 0.08);
   }
 

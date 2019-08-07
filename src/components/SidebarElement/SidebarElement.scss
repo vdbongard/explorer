@@ -6,8 +6,18 @@
   padding: 6px 16px;
   cursor: pointer;
   border: 1px solid transparent;
+  outline: none;
+  width: 100%;
 
   &:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  &:focus-visible {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+
+  &:-moz-focusring {
     background-color: rgba(0, 0, 0, 0.03);
   }
 
@@ -17,6 +27,14 @@
 
   &.selected {
     background-color: rgba(0, 0, 0, 0.075);
+
+    &:focus-visible {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    &:-moz-focusring {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
   }
 
   &.selected .name {

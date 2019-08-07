@@ -33,7 +33,7 @@ const SidebarElement: FC<Props> = ({
   if (header) nameClass += ' header';
 
   return (
-    <div className={className} onClick={handleClick}>
+    <div className={className} onClick={handleClick} tabIndex={selected ? 0 : -1}>
       {icon && <div className="icon">{icon}</div>}
       <div className={nameClass}>{name}</div>
     </div>
