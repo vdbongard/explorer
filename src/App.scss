@@ -1,8 +1,8 @@
 @import 'styles/variables.scss';
 
 .App {
-  background: rgb(244, 140, 230);
-  background: linear-gradient(135deg, rgba(244, 140, 230, 1) 0%, rgba(61, 206, 214, 1) 100%);
+  background: url('bg0.jpg');
+  background-size: cover;
   min-height: 100vh;
   color: white;
 }
