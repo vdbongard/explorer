@@ -5,8 +5,9 @@
   width: 900px;
   height: 600px;
   color: $color-text;
-  box-shadow: $box-shadow-32;
+  box-shadow: $box-shadow-8;
   overflow: hidden;
+  z-index: 0;
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 30px 46px 1fr;
@@ -14,6 +15,11 @@
     'TitleBar TitleBar'
     'Header Header'
     'Sidebar Content';
+
+  &:focus-within {
+    box-shadow: $box-shadow-32;
+    z-index: 1;
+  }
 
   .TitleBar {
     grid-area: TitleBar;

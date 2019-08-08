@@ -22,7 +22,7 @@ const Explorer: FC = (): ReactElement => {
   }, [setPos]);
 
   return (
-    <div className="Explorer" style={{ left: pos[0], top: pos[1] }} ref={explorerRef}>
+    <div className="Explorer" style={{ left: pos[0], top: pos[1] }} ref={explorerRef} tabIndex={0}>
       <TitleBar setPos={setPos} explorerRef={explorerRef} />
       <Header />
       <Sidebar />
