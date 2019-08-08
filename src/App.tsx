@@ -65,8 +65,15 @@ const App: FC = (): ReactElement => {
   const appRef = useRef<HTMLDivElement>(null);
 
   const openExplorer = (e: React.MouseEvent<HTMLDivElement>): void => {
-    if (e.target === appRef.current) {
+    if (e.button === 1 && e.target === appRef.current) {
       setExplorerWindows([...explorerWindows, `exp${explorerWindows.length}`]);
+    }
+  };
+
+  // stop middle mouse scrolling preventing the middle mouse click to open an explorer window
+  const onMouseDown = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (e.button === 1) {
+      e.preventDefault();
     }
   };
 
@@ -108,7 +115,7 @@ const App: FC = (): ReactElement => {
   );
 
   return (
-    <div className="App" onClick={openExplorer} ref={appRef}>
+    <div className="App" onAuxClick={openExplorer} ref={appRef} onMouseDown={onMouseDown}>
       <FileSystemContext.Provider value={useReducer(reducer, initialState)}>
         {explorerList}
       </FileSystemContext.Provider>
