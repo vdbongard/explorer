@@ -5,8 +5,15 @@ import Sidebar from '../Sidebar/Sidebar';
 import Content from '../Content/Content';
 import TitleBar from '../TitleBar/TitleBar';
 
-const Explorer: FC = (): ReactElement => {
+interface Props {
+  id: string;
+  onFocus: (id: string) => void;
+  onClose: (id: string) => void;
+}
+
+const Explorer: FC<Props> = ({ id, onFocus, onClose }): ReactElement => {
   const [pos, setPos] = useState([0, 0]);
+  const [initializing, setInitializing] = useState(true);
   const explorerRef = useRef<HTMLDivElement>(null);
 
   // centering
@@ -19,11 +26,28 @@ const Explorer: FC = (): ReactElement => {
     const y = (window.innerHeight - offsetHeight) / 2;
 
     setPos([x, y]);
+    setInitializing(false);
   }, [setPos]);
 
+  const handleFocus = (): void => onFocus(id);
+
+  const handleClose = (): void => onClose(id);
+
+  let className = 'Explorer';
+
+  if (initializing) {
+    className += ' initializing';
+  }
+
   return (
-    <div className="Explorer" style={{ left: pos[0], top: pos[1] }} ref={explorerRef} tabIndex={0}>
-      <TitleBar setPos={setPos} explorerRef={explorerRef} />
+    <div
+      className={className}
+      style={{ left: pos[0], top: pos[1] }}
+      ref={explorerRef}
+      tabIndex={0}
+      onFocus={handleFocus}
+    >
+      <TitleBar setPos={setPos} explorerRef={explorerRef} onClose={handleClose} />
       <Header />
       <Sidebar />
       <Content />

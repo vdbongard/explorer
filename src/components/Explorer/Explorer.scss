@@ -8,6 +8,7 @@
   box-shadow: $box-shadow-8;
   overflow: hidden;
   z-index: 0;
+  opacity: 1;
   display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 30px 46px 1fr;
@@ -15,6 +16,10 @@
     'TitleBar TitleBar'
     'Header Header'
     'Sidebar Content';
+
+  &.initializing {
+    opacity: 0;
+  }
 
   &:focus-within {
     box-shadow: $box-shadow-32;

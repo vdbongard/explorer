@@ -1,4 +1,4 @@
-import React, { Dispatch, FC, ReactElement, useReducer } from 'react';
+import React, { Dispatch, FC, ReactElement, ReactNode, useReducer, useRef, useState } from 'react';
 import './styles/_reboot.scss';
 import './App.scss';
 import Explorer from './components/Explorer/Explorer';
@@ -61,10 +61,56 @@ export const FileSystemContext = React.createContext<[State, Dispatch<Action>]>(
 ]);
 
 const App: FC = (): ReactElement => {
+  const [explorerWindows, setExplorerWindows] = useState(['exp0']);
+  const appRef = useRef<HTMLDivElement>(null);
+
+  const openExplorer = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (e.target === appRef.current) {
+      setExplorerWindows([...explorerWindows, `exp${explorerWindows.length}`]);
+    }
+  };
+
+  const closeExplorer = (id: string): void => {
+    const filteredExplorerWindows = explorerWindows.filter(
+      (explorerWindow): boolean => explorerWindow !== id
+    );
+    setExplorerWindows([...filteredExplorerWindows]);
+  };
+
+  // move the focused window to the end of the array so that the correct z-index order is kept after blur
+  const onFocusExplorer = (id: string): void => {
+    const focusedExplorerWindowIndex = explorerWindows.findIndex(
+      (explorerWindow): boolean => explorerWindow === id
+    );
+
+    // already the last element
+    if (focusedExplorerWindowIndex === explorerWindows.length - 1) {
+      return;
+    }
+
+    const newExplorerWindows = [...explorerWindows];
+
+    const focusedExplorerWindow = newExplorerWindows.splice(focusedExplorerWindowIndex, 1);
+    newExplorerWindows.push(...focusedExplorerWindow);
+
+    setExplorerWindows(newExplorerWindows);
+  };
+
+  const explorerList = explorerWindows.map(
+    (explorerWindow): ReactNode => (
+      <Explorer
+        id={explorerWindow}
+        key={explorerWindow}
+        onFocus={onFocusExplorer}
+        onClose={closeExplorer}
+      />
+    )
+  );
+
   return (
-    <div className="App">
+    <div className="App" onClick={openExplorer} ref={appRef}>
       <FileSystemContext.Provider value={useReducer(reducer, initialState)}>
-        <Explorer />
+        {explorerList}
       </FileSystemContext.Provider>
     </div>
   );

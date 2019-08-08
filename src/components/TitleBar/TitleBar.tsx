@@ -15,9 +15,10 @@ import { useDrag } from '../../hooks/useDrag';
 interface Props {
   setPos: (newPos: [number, number]) => void;
   explorerRef: RefObject<HTMLDivElement>;
+  onClose?: () => void;
 }
 
-const TitleBar: FC<Props> = ({ setPos, explorerRef }): ReactElement => {
+const TitleBar: FC<Props> = ({ setPos, explorerRef, onClose }): ReactElement => {
   const [tabs, setTabs] = useState(['Tab 1']);
   const [selectedTab, setSelectedTab] = useState('Tab 1');
   const [maximized, setMaximized] = useState(false);
@@ -93,7 +94,7 @@ const TitleBar: FC<Props> = ({ setPos, explorerRef }): ReactElement => {
       <div className="actions">
         <button className="minimize" />
         <button className={maximized ? 'restore' : 'maximize'} onClick={toggleMaximize} />
-        <button className="close" />
+        <button className="close" onClick={onClose} />
       </div>
     </div>
   );
