@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="70a38c95-eaf4-4906-aa89-f12b7120518e" name="Default Changelist" comment="Add">
+      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\Daniel\Projects\explorer\node_modules\prettier" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.javascript.prettier" />
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="Add .idea/prettier.xml">
+      <created>1592753664060</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592753664060</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add .idea/prettier.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add .idea/prettier.xml" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1027" y="502" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1592753754058">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1027" y="502" key="#com.intellij.fileTypes.FileTypeChooser/0.0.2560.1400/2560.112.1920.1040/-1920.112.1920.1040@0.0.2560.1400" timestamp="1592753754058" />
+    <state x="905" y="286" key="CommitChangelistDialog2" timestamp="1592753799037">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="905" y="286" key="CommitChangelistDialog2/0.0.2560.1400/2560.112.1920.1040/-1920.112.1920.1040@0.0.2560.1400" timestamp="1592753799037" />
+    <state x="1060" y="455" key="FileChooserDialogImpl" timestamp="1592753622725">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1060" y="455" key="FileChooserDialogImpl/0.0.2560.1400/2560.112.1920.1040/-1920.112.1920.1040@0.0.2560.1400" timestamp="1592753622725" />
+    <state x="781" y="345" key="SettingsEditor" timestamp="1592753634483">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="781" y="345" key="SettingsEditor/0.0.2560.1400/2560.112.1920.1040/-1920.112.1920.1040@0.0.2560.1400" timestamp="1592753634483" />
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2" timestamp="1592753665018">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="872" y="433" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.112.1920.1040/-1920.112.1920.1040@0.0.2560.1400" timestamp="1592753665018" />
+  </component>
+</project>
