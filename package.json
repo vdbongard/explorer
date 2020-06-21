@@ -20,9 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint **/*.{js,ts,tsx}",
-    "prettier": "prettier --check .",
+    "prettier": "npx prettier --check .",
     "fix-lint": "eslint --fix **/*.{js,ts,tsx}",
-    "fix-prettier": "prettier --write .",
+    "fix-prettier": "npx prettier --write .",
     "fix": "npm run fix-prettier && npm run fix-lint"
   },
   "eslintConfig": {
