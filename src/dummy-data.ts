@@ -56,7 +56,10 @@ export const fileSystem: Node[] = [
       {
         type: 'folder',
         name: 'Desktop',
-        nodes: [{ type: 'folder', name: 'Games' }, { type: 'file', name: 'background.jpg' }],
+        nodes: [
+          { type: 'folder', name: 'Games' },
+          { type: 'file', name: 'background.jpg' },
+        ],
       },
       {
         type: 'folder',
@@ -65,7 +68,10 @@ export const fileSystem: Node[] = [
           {
             type: 'folder',
             name: 'Pdfs',
-            nodes: [{ type: 'file', name: '1.pdf' }, { type: 'file', name: '2.pdf' }],
+            nodes: [
+              { type: 'file', name: '1.pdf' },
+              { type: 'file', name: '2.pdf' },
+            ],
           },
           { type: 'file', name: 'logo.png' },
           { type: 'file', name: 'sunset.png' },

@@ -4,15 +4,15 @@
   "private": true,
   "homepage": "https://vdbongard.com/explorer",
   "dependencies": {
-    "@types/jest": "24.0.15",
-    "@types/node": "12.6.6",
-    "@types/react": "16.8.23",
-    "@types/react-dom": "16.8.4",
+    "@types/jest": "26.0.0",
+    "@types/node": "14.0.13",
+    "@types/react": "16.9.38",
+    "@types/react-dom": "16.9.8",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "typescript": "3.4.5"
+    "react-scripts": "3.4.1",
+    "typescript": "3.9.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -20,9 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint **/*.{js,ts,tsx}",
-    "lint-prettier": "npx prettier --config .prettierrc.js --list-different **/*.{html,scss,css,json,yml,js,ts,tsx}",
-    "fix-lint": "eslint **/*.{js,ts,tsx} --fix",
-    "fix-prettier": "prettier --config .prettierrc.js **/*.{html,scss,css,json,yml,js,ts,tsx} --write",
+    "prettier": "prettier --check .",
+    "fix-lint": "eslint --fix **/*.{js,ts,tsx}",
+    "fix-prettier": "prettier --write .",
     "fix": "npm run fix-prettier && npm run fix-lint"
   },
   "eslintConfig": {
@@ -43,6 +43,6 @@
   "devDependencies": {
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2"
+    "prettier": "^2.0.5"
   }
 }

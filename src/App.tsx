@@ -57,7 +57,9 @@ const reducer = (state: State, action: Action): State => {
 
 export const FileSystemContext = React.createContext<[State, Dispatch<Action>]>([
   initialState,
-  (): void => {},
+  (): void => {
+    return;
+  },
 ]);
 
 const App: FC = (): ReactElement => {

@@ -4,8 +4,8 @@ import SidebarElement from '../SidebarElement/SidebarElement';
 import { favoritesFolder, thisPCFolder } from '../../dummy-data';
 
 const Sidebar: FC = (): ReactElement => {
-  const [selectedElementIndex, setSelectedElementIndex] = useState();
-  const [selectedPCElementIndex, setSelectedPCElementIndex] = useState();
+  const [selectedElementIndex, setSelectedElementIndex] = useState<number | null>();
+  const [selectedPCElementIndex, setSelectedPCElementIndex] = useState<number | null>();
 
   const quickAccessList = favoritesFolder.map(
     ({ name, icon }, index): ReactNode => (
